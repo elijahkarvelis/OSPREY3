@@ -1,21 +1,21 @@
 /*
 ** This file is part of OSPREY 3.0
-** 
+**
 ** OSPREY Protein Redesign Software Version 3.0
 ** Copyright (C) 2001-2018 Bruce Donald Lab, Duke University
-** 
+**
 ** OSPREY is free software: you can redistribute it and/or modify
 ** it under the terms of the GNU General Public License version 2
 ** as published by the Free Software Foundation.
-** 
+**
 ** You should have received a copy of the GNU General Public License
 ** along with OSPREY.  If not, see <http://www.gnu.org/licenses/>.
-** 
+**
 ** OSPREY relies on grants for its development, and since visibility
 ** in the scientific literature is essential for our success, we
 ** ask that users of OSPREY cite our papers. See the CITING_OSPREY
 ** document in this distribution for more information.
-** 
+**
 ** Contact Info:
 **    Bruce Donald
 **    Duke University
@@ -25,7 +25,7 @@
 **    NC 27708-0129
 **    USA
 **    e-mail: www.cs.duke.edu/brd/
-** 
+**
 ** <signature of Bruce Donald>, Mar 1, 2018
 ** Bruce Donald, Professor of Computer Science
 */
@@ -49,12 +49,12 @@ import java.io.Serializable;
  * A molecule with associated residue flexibility information.
  */
 public class Strand implements Serializable {
-	
+
 	/** Magic value that represents the wild-type residue type. Used by {@link ResidueFlex#setLibraryRotamers} */
 	public static final String WildType = "__WT__";
-	
+
 	public static class Builder {
-		
+
 		private Molecule mol;
 		private String firstResNum;
 		private String lastResNum;
@@ -66,8 +66,8 @@ public class Strand implements Serializable {
 		 **/
 		private ResidueTemplateLibrary templateLib;
 		private boolean errorOnNonTemplateResidues;
-		private Residue.TemplateMatchingMethod templateMatchingMethod = Residue.TemplateMatchingMethod.BondDistances;
-		
+		private Residue.TemplateMatchingMethod templateMatchingMethod = Residue.TemplateMatchingMethod.AtomNames;
+
 		public Builder(Molecule mol) {
 			this.mol = mol;
 			this.firstResNum = mol.residues.get(0).getPDBResNumber();
@@ -81,13 +81,13 @@ public class Strand implements Serializable {
 			return setResidues(stringResNumForMolec(firstResNum,mol),
 					stringResNumForMolec(lastResNum,mol));
 		}
-		
+
 		public Builder setResidues(String firstResNum, String lastResNum) {
 			this.firstResNum = firstResNum;
 			this.lastResNum = lastResNum;
 			return this;
 		}
-		
+
 		/**
 		 * temporary glue code to support old ResidueTermini, but ResidueTermini will eventually be removed in favor of this Strand class
 		 */
@@ -98,12 +98,12 @@ public class Strand implements Serializable {
 			}
 			return this;
 		}
-		
+
 		public Builder setTemplateLibrary(ResidueTemplateLibrary val) {
 			this.templateLib = val;
 			return this;
 		}
-		
+
 		public Builder setErrorOnNonTemplateResidues(boolean val) {
 			this.errorOnNonTemplateResidues = val;
 			return this;
@@ -113,7 +113,7 @@ public class Strand implements Serializable {
 			this.templateMatchingMethod = val;
 			return this;
 		}
-		
+
 		public Strand build() {
 
 			if (templateLib == null) {
@@ -123,29 +123,29 @@ public class Strand implements Serializable {
 			return new Strand(mol, firstResNum, lastResNum, templateLib, errorOnNonTemplateResidues, templateMatchingMethod);
 		}
 	}
-	
+
 	/**
 	 * configured flexibility for one residue
 	 */
 	public static class ResidueFlex implements Serializable {
-		
+
 		public final String wildType;
-		
+
 		public VoxelShape voxelShape;
 		public Set<String> resTypes; // for library rotamers only
 		public boolean addWildTypeRotamers;
-		
+
 		protected ResidueFlex(String wildType) {
-			
+
 			this.wildType = wildType;
-			
+
 			this.resTypes = new LinkedHashSet<>();
-			
+
 			// default flexibility
 			setDiscrete();
 			setNoRotamers();
 		}
-		
+
 		public boolean isFlexible() {
 			return !resTypes.isEmpty() || addWildTypeRotamers;
 		}
@@ -170,7 +170,7 @@ public class Strand implements Serializable {
 			addWildTypeRotamers = false;
 			return this;
 		}
-		
+
 		/**
 		 * Add the wild type conformation as a rotamer, including any alternate conformations.
 		 */
@@ -178,41 +178,41 @@ public class Strand implements Serializable {
 			addWildTypeRotamers = true;
 			return this;
 		}
-		
+
 		/**
 		 * Set the mutatable residue types (e.g., amino acids) for this residue.
 		 * Use {@link #WildType} to represent the wild type residue type.
-		 * If no residue types are passed, the wild type will be used. 
+		 * If no residue types are passed, the wild type will be used.
 		 */
 		public ResidueFlex setLibraryRotamers(String ... resTypes) {
 			return setLibraryRotamers(Arrays.asList(resTypes));
 		}
-		
+
 		public ResidueFlex setLibraryRotamers(List<String> resTypes) {
-			
+
 			this.resTypes.clear();
-			
+
 			if (resTypes.isEmpty()) {
-				
+
 				// no mutations explicitly chosen, don't assume anything, this is an error
 				throw new IllegalArgumentException("no residue types chosen");
-				
+
 			} else {
-				
+
 				for (String resType : resTypes) {
-					
+
 					// replace WT with actual amino acid
 					if (resType.equalsIgnoreCase(WildType)) {
 						resType = wildType;
 					}
-					
+
 					this.resTypes.add(resType);
 				}
 			}
-			
+
 			return this;
 		}
-		
+
 		public ResidueFlex setDiscrete() {
 			return setVoxelShape(new VoxelShape.Point());
 		}
@@ -225,17 +225,17 @@ public class Strand implements Serializable {
 		public ResidueFlex setContinuous(double voxelHalfWidth) {
 			return setVoxelShape(new VoxelShape.Rect(voxelHalfWidth));
 		}
-		
+
 		public ResidueFlex setVoxelShape(VoxelShape voxelShape) {
 			this.voxelShape = voxelShape;
 			return this;
 		}
 	}
-	
+
 	public class Flexibility implements Serializable {
-		
+
 		private Map<String,ResidueFlex> residues;
-		
+
 		public Flexibility(List<Residue> residues) {
 			this.residues = new LinkedHashMap<>();
 			for (Residue res : residues) {
@@ -250,12 +250,12 @@ public class Strand implements Serializable {
 		public ResidueFlex get(int resNum) {
 			return get(stringResNumForMolec(resNum, mol));
 		}
-		
+
 		public ResidueFlex get(String resNum) {
 			resNum = Residues.normalizeResNum(resNum);
 			return residues.get(resNum);
 		}
-		
+
 		public List<String> getFlexibleResidueNumbers() {
 			return residues.entrySet().stream()
 				.filter((entry) -> {
@@ -268,7 +268,7 @@ public class Strand implements Serializable {
 				})
 				.collect(Collectors.toList());
 		}
-		
+
 		public List<String> getStaticResidueNumbers() {
 			return residues.entrySet().stream()
 				.filter((entry) -> {
@@ -285,67 +285,67 @@ public class Strand implements Serializable {
 
 	/** The molecule this strand represents */
 	public final Molecule mol;
-	
+
 	/** The template library used to pick templates for this strand */
 	public final ResidueTemplateLibrary templateLib;
-	
+
 	/** Names of residues that couldn't be matched to templates */
 	public final Set<String> nonTemplateResNames;
-	
+
 	/** Flexibility parameters for this strand */
 	public final Flexibility flexibility;
-		
+
 	private Strand(Molecule mol, String firstResNumber, String lastResNumber, ResidueTemplateLibrary templateLib, boolean errorOnNonTemplateResidues, Residue.TemplateMatchingMethod templateMatchingMethod) {
-		
+
 		// make sure the mol has these residues, otherwise the ranges won't work correctly
 		mol.residues.getOrThrow(firstResNumber);
 		mol.residues.getOrThrow(lastResNumber);
-		
+
 		// build our molecule copy from the residue subset
 		this.mol = new Molecule();
 		for (Residue res : mol.getResRangeByPDBResNumber(firstResNumber, lastResNumber)) {
-			
+
 			// copy the main res
 			Residue newRes = new Residue(res);
 			this.mol.appendResidue(newRes);
-			
+
 			// copy the alternates, if any
 			for (Residue altRes : mol.getAlternates(res.indexInMolecule)) {
 				this.mol.addAlternate(newRes.indexInMolecule, new Residue(altRes));
 			}
-			
+
 			assert (this.mol.getAlternates(newRes.indexInMolecule).size() == mol.getAlternates(res.indexInMolecule).size());
 		}
-		
+
 		// assign templates and mark intra-residue bonds
 		this.templateLib = templateLib;
 		nonTemplateResNames = tryAssigningTemplates(this.mol, templateLib, templateMatchingMethod);
-		
+
 		// delete non template residues if needed
 		if (!nonTemplateResNames.isEmpty()) {
-			
+
 			// get a list of residues
 			String resNames = String.join("\n", nonTemplateResNames);
-			
+
 			if (errorOnNonTemplateResidues) {
 				throw new Error("ERROR: " + nonTemplateResNames.size() + " Strand residue(s) could not be matched to templates:\n" + resNames);
 			}
 
 			this.mol.deleteResidues(nonTemplateResNames);
-			
+
 			// warn user about deleted residues
 			// TODO: write to special log?
 			System.out.println("WARNING: " + nonTemplateResNames.size() + " Strand residue(s) could not be matched to templates and were automatically deleted:\n" + resNames);
 		}
-		
+
 		// assigning templates marks intra-res bonds; we can now mark inter-res too
 		this.mol.markInterResBonds();
-		
+
 		// init flexibility
 		flexibility = new Flexibility(this.mol.residues);
 	}
-        
-        
+
+
     public static LinkedHashSet<String> tryAssigningTemplates(Molecule mol, ResidueTemplateLibrary templateLib, Residue.TemplateMatchingMethod templateMatchingMethod){
         LinkedHashSet<String> nonTemplateResNames = new LinkedHashSet<>();
         for (Residue res : mol.residues) {
@@ -382,10 +382,10 @@ public class Strand implements Serializable {
         }
         return nonTemplateResNames;
     }
-	
+
 	private static String stringResNumForMolec(int resNumInt, Molecule molec) {
 		//given an integer residue number, find the full (with chain ID) residue number
-		//in this molec that matches it.  Error if more than one.  
+		//in this molec that matches it.  Error if more than one.
 		String pureNumber = Integer.toString(resNumInt);
 		return molec.getResByPDBResNumber(pureNumber).getPDBResNumber();
 	}
