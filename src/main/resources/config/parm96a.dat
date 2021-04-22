@@ -1,9 +1,13 @@
 PARM96 for DNA, RNA and proteins with TIP3P Water. USE SCEE=1.2 in energy progs
 BR 79.90                !            bromine
-C  12.01                             sp2 C carbonyl group 
+C  12.01                             sp2 C carbonyl group
 CA 12.01                             sp2 C pure aromatic (benzene)
 CB 12.01                             sp2 aromatic C, 5&6 membered ring junction
 CC 12.01                             sp2 aromatic C, 5 memb. ring HIS
+CD 12.01                             E Karvelis added 4/22/2021
+CE 12.01                             E Karvelis added 4/22/2021
+C2 12.01                             E Karvelis added 4/22/2021
+C3 12.01                             E Karvelis added 4/22/2021
 CK 12.01                             sp2 C 5 memb.ring in purines
 CM 12.01                             sp2 C  pyrimidines in pos. 5 & 6
 CN 12.01                             sp2 C aromatic 5&6 memb.ring junct.(TRP)
@@ -23,6 +27,7 @@ H3 1.008                             H aliph. bond. to C with 3 eletrwd.groups
 HA 1.008                             H arom. bond. to C without elctrwd. groups
 H4 1.008                             H arom. bond. to C with 1 electrwd. group
 H5 1.008                             H arom. bond. to C with 2 electrwd. groups
+HN 1.008                             E Karvelis added 4/22/2021
 HO 1.008                             hydroxyl group
 HS 1.008                             hydrogen bonded to sulphur
 HW 1.008                             H in TIP3P water
@@ -36,15 +41,17 @@ N  14.01                             sp2 nitrogen in amide groups
 NA 14.01                             sp2 N in 5 memb.ring w/H atom (HIS)
 NB 14.01                             sp2 N in 5 memb.ring w/LP (HIS,ADE,GUA)
 NC 14.01                             sp2 N in 6 memb.ring w/LP (ADE,GUA)
+NH 14.01                             E Karvelis added 4/22/2021
 N2 14.01                             sp2 N in amino groups
 N3 14.01                             sp3 N for charged amino groups (Lys, etc)
-N* 14.01                             sp2 N 
+N* 14.01                             sp2 N
 O  16.00                             carbonyl group oxygen
 OW 16.00                             oxygen in TIP3P water
 OH 16.00                             oxygen in hydroxyl group
 OS 16.00                             ether and ester oxygen
 O2 16.00                             carboxyl and phosphate group oxygen
 P  30.97                             phosphate
+P5 30.97                             E Karvelis added 4/22/2021
 S  32.06                             sulphur in disulfide linkage
 SH 32.06                             sulphur in cystine
 SO 32.06                             sulphur in sulphate
@@ -55,16 +62,18 @@ K  39.10                             potassium
 Rb 85.47                             rubidium
 Cs 132.91                            cesium
 Cl 35.45                             chlorine, ryan lilien
-CZ 12.01                             antechamber, same as c1, ivelin georgiev 
+CZ 12.01                             antechamber, same as c1, ivelin georgiev
 
-C   H   HO  N   NA  NB  NC  N2  NT  N2  N3  N*  O   OH  OS  P   O2 
+C   H   HO  N   NA  NB  NC  N2  NT  N2  N3  N*  O   OH  OS  P   O2
 OW-HW  553.0    0.9572    ! TIP3P water
 HW-HW  553.0    1.5136      TIP3P water
 C -CA  469.0    1.409       JCC,7,(1986),230; TYR
 C -CB  447.0    1.419       JCC,7,(1986),230; GUA
+C -CE  354.50   1.482       E Karvelis added 4/22/2021
 C -CM  410.0    1.444       JCC,7,(1986),230; THY,URA
 C -CT  317.0    1.522       JCC,7,(1986),230; AA
 C -N*  424.0    1.383       JCC,7,(1986),230; CYT,URA
+C -N   427.60   1.379       E Karvelis added 4/22/2021
 C -NA  418.0    1.388       JCC,7,(1986),230; GUA.URA
 C -NC  457.0    1.358       JCC,7,(1986),230; CYT
 C -O   570.0    1.229       JCC,7,(1986),230; AA,CYT,GUA,THY,URA
@@ -119,6 +128,10 @@ C*-CT  317.0    1.495       JCC,7,(1986),230; TRP
 C*-CW  546.0    1.352       JCC,7,(1986),230; TRP
 CA-CN  469.0    1.400       JCC,7,(1986),230; TRP
 CB-CN  447.0    1.419       JCC,7,(1986),230; TRP
+C2-CE  547.3    1.346       E Karvelis added 4/22/2021
+C3-CE  320.7    1.516       E Karvelis added 4/22/2021
+C2-H4  344.6    1.087       E Karvelis added 4/22/2021
+C2-NH  416.2    1.387       E Karvelis added 4/22/2021
 CC-CT  317.0    1.504       JCC,7,(1986),230; HIS
 CC-CV  512.0    1.375       JCC,7,(1986),230; HIS(delta)
 CC-CW  518.0    1.371       JCC,7,(1986),230; HIS(epsilon)
@@ -137,12 +150,36 @@ CV-NB  410.0    1.394       JCC,7,(1986),230; HIS
 CW-H4  367.0    1.080       changed from 340. bsd on C6H6 nmodes;HIS(epsilon,+)
 CW-NA  427.0    1.381       JCC,7,(1986),230; HIS,TRP
 H -N   434.0    1.010       JCC,7,(1986),230; AA
-H -N3  434.0    1.010       JCC,7,(1986),230; LYS    
+HN-N   403.20    1.013       E Karvelis added 4/22/2021
+H -N3  434.0    1.010       JCC,7,(1986),230; LYS
 HS-SH  274.0    1.336       JCC,7,(1986),230; CYS
 S -S   166.0    2.038       JCC,7,(1986),230; CYX   (SCHERAGA)
 CT-F   367.0    1.380       JCC,13,(1992),963;CF4; R0=1.332 FOR CHF3
 SO-OS  230.0    1.62        JCC,16,(1995);56
 SO-NT  230      1.685       JCC,16,(1995);56
+C3-HC  330.6    1.097       E Karvelis added 4/22/2021
+C2-C3  326.8    1.510       E Karvelis added 4/22/2021
+C2-HA  343.1    1.088       E Karvelis added 4/22/2021
+C2-C2  569.4    1.334       E Karvelis added 4/22/2021
+C3-NH  326.6    1.464       E Karvelis added 4/22/2021
+C3-H2  331.70   1.096       E Karvelis added 4/22/2021
+C3-OS  308.60   1.432       E Karvelis added 4/22/2021
+C3-C3  300.90   1.538       E Karvelis added 4/22/2021
+C3-H1  330.60   1.097       E Karvelis added 4/22/2021
+C3-OH  316.70   1.423       E Karvelis added 4/22/2021
+OS-P5  330.60   1.615       E Karvelis added 4/22/2021
+O -P5  479.50   1.487       E Karvelis added 4/22/2021
+OH-P5  330.40   1.615       E Karvelis added 4/22/2021
+C3-NA  327.70   1.463       E Karvelis added 4/22/2021
+CD-NA  425.80   1.380       E Karvelis added 4/22/2021
+CD-H5  351.80   1.082       E Karvelis added 4/22/2021
+CD-NC  525.40   1.317       E Karvelis added 4/22/2021
+CA-NB  488.00   1.339       E Karvelis added 4/22/2021
+CA-H5  343.20   1.088       E Karvelis added 4/22/2021
+CA-NH  417.90   1.386       E Karvelis added 4/22/2021
+HN-NH  404.60   1.012       E Karvelis added 4/22/2021
+C -C3  313.00   1.524       E Karvelis added 4/22/2021
+C3-O   449.90   1.317       E Karvelis added 4/22/2021
 
 HW-OW-HW    100.      104.52    TIP3P water
 HW-HW-OW      0.      127.74    (found in crystallographic water with 3 bonds)
@@ -187,7 +224,7 @@ CA-CA-CN    63.0      120.00    changed from 85.0  bsd on C6H6 nmodes; AA trp
 C -CB-CB    63.0      119.20    changed from 85.0  bsd on C6H6 nmodes; NA gua
 C -CB-NB    70.0      130.00
 CA-CB-CB    63.0      117.30    changed from 85.0  bsd on C6H6 nmodes; NA ade
-CA-CB-NB    70.0      132.40    
+CA-CB-NB    70.0      132.40
 CB-CB-N*    70.0      106.20
 CB-CB-NB    70.0      110.40
 CB-CB-NC    70.0      127.70
@@ -226,8 +263,8 @@ H1-CT-H1    35.0      109.50
 HP-CT-HP    35.0      109.50    AA lys, ch3nh4+
 H2-CT-N*    50.0      109.50    changed based on NMA nmodes
 H1-CT-N*    50.0      109.50    changed based on NMA nmodes
-H1-CT-OH    50.0      109.50    changed based on NMA nmodes 
-H1-CT-OS    50.0      109.50    changed based on NMA nmodes 
+H1-CT-OH    50.0      109.50    changed based on NMA nmodes
+H1-CT-OS    50.0      109.50    changed based on NMA nmodes
 H2-CT-OS    50.0      109.50    changed based on NMA nmodes
 N*-CT-OS    50.0      109.50
 H1-CT-N     50.0      109.50    AA general  changed based on NMA nmodes
@@ -293,8 +330,8 @@ CK-N*-CT    70.0      128.80
 CK-N*-H     30.0      128.80    for unmethylated n.a. bases,chngd bsd NMA nmodes
 CM-N*-CT    70.0      121.20
 CM-N*-H     30.0      121.20    for unmethylated n.a. bases,chngd bsd NMA nmodes
-CA-N2-H     35.0      120.00    
-H -N2-H     35.0      120.00    
+CA-N2-H     35.0      120.00
+H -N2-H     35.0      120.00
 CT-N2-H     35.0      118.40    AA arg
 CA-N2-CT    50.0      123.20    AA arg
 CT-N3-H     50.0      109.50    AA lys,     changed based on NMA nmodes
@@ -335,6 +372,78 @@ CT-SH-HS    43.0       96.00    changed from 44.0 based on methanethiol nmodes
 HS-SH-HS    35.0       92.07    AA cys
 F -CT-F     77.0      109.10    JCC,13,(1992),963;
 F -CT-H1    35.0      109.50    JCC,13,(1992),963;
+CE-C -O     68.800    123.200   E Karvelis added 4/22/2021
+C -N -HN    48.300    117.550   E Karvelis added 4/22/2021
+C -CE-C2    65.500    120.420   E Karvelis added 4/22/2021
+C -CE-C3    62.900    117.220   E Karvelis added 4/22/2021
+CE-C -N     67.900    115.220   E Karvelis added 4/22/2021
+HN-N -HN    39.600    117.950   E Karvelis added 4/22/2021
+CE-C2-H4    49.100    122.310   E Karvelis added 4/22/2021
+CE-C2-NH    69.600    120.710   E Karvelis added 4/22/2021
+CE-C3-HC    46.800    110.590   E Karvelis added 4/22/2021
+C2-C3-CE    63.800    111.810   E Karvelis added 4/22/2021
+C2-CE-C3    64.000    122.530   E Karvelis added 4/22/2021
+C2-NH-C2    64.000    124.730   E Karvelis added 4/22/2021
+C2-NH-C3    62.400    123.710   E Karvelis added 4/22/2021
+H4-C2-NH    50.700    115.080   E Karvelis added 4/22/2021
+C3-C2-HA    45.900    115.680   E Karvelis added 4/22/2021
+C2-C2-C3    64.100    123.630   E Karvelis added 4/22/2021
+HC-C3-HC    39.400    107.580   E Karvelis added 4/22/2021
+C2-C3-HC    47.000    110.360   E Karvelis added 4/22/2021
+C2-C2-H4    49.400    122.670   E Karvelis added 4/22/2021
+C2-C2-NH    68.700    124.990   E Karvelis added 4/22/2021
+C2-C2-HA    49.900    120.430   E Karvelis added 4/22/2021
+H2-C3-NH    49.500    110.010   E Karvelis added 4/22/2021
+NH-C3-OS    71.200    109.130   E Karvelis added 4/22/2021
+C3-C3-NH    66.200    110.460   E Karvelis added 4/22/2021
+C3-OS-C3    62.700    112.480   E Karvelis added 4/22/2021
+C3-C3-H1    46.400    109.560   E Karvelis added 4/22/2021
+C3-C3-OH    67.500    110.190   E Karvelis added 4/22/2021
+C3-C3-C3    62.900    111.510   E Karvelis added 4/22/2021
+H2-C3-OS    50.900    109.580   E Karvelis added 4/22/2021
+C3-C3-H2    46.200    110.220   E Karvelis added 4/22/2021
+C3-C3-OS    68.000    107.970   E Karvelis added 4/22/2021
+H1-C3-OS    50.800    109.780   E Karvelis added 4/22/2021
+C3-OH-HO    47.400    107.260   E Karvelis added 4/22/2021
+H1-C3-OH    50.900    110.260   E Karvelis added 4/22/2021
+C3-OS-P5    77.700    119.540   E Karvelis added 4/22/2021
+H1-C3-H1    39.200    108.460   E Karvelis added 4/22/2021
+O -P5-OS    43.900    115.460   E Karvelis added 4/22/2021
+OS-P5-OS    45.000    101.840   E Karvelis added 4/22/2021
+P5-OS-P5    98.400    126.250   E Karvelis added 4/22/2021
+O -P5-O     45.800    115.800   E Karvelis added 4/22/2021
+C3-C3-NA    65.500    112.880   E Karvelis added 4/22/2021
+OH-P5-OS    45.000    101.940   E Karvelis added 4/22/2021
+HO-OH-P5    56.300    110.080   E Karvelis added 4/22/2021
+O -P5-OH    43.900    115.210   E Karvelis added 4/22/2021
+NA-C3-OS    71.300    109.030   E Karvelis added 4/22/2021
+C3-NA-CD    61.900    126.460   E Karvelis added 4/22/2021
+C3-NA-CA    62.300    124.360   E Karvelis added 4/22/2021
+H2-C3-NA    50.200    107.310   E Karvelis added 4/22/2021
+H5-CD-NA    49.600    121.550   E Karvelis added 4/22/2021
+NA-CD-NC    74.900    112.220   E Karvelis added 4/22/2021
+CA-CA-NA    69.100    118.340   E Karvelis added 4/22/2021
+NA-CA-NB    69.800    127.090   E Karvelis added 4/22/2021
+CA-NA-CD    67.400    113.150   E Karvelis added 4/22/2021
+CA-NC-CD    72.500    104.880   E Karvelis added 4/22/2021
+H5-CD-NC    50.600    125.520   E Karvelis added 4/22/2021
+CA-CA-NC    69.500    119.720   E Karvelis added 4/22/2021
+CA-CA-NB    68.800    122.940   E Karvelis added 4/22/2021
+CA-CA-NH    68.300    120.950   E Karvelis added 4/22/2021
+CA-NB-CA    68.300    117.220   E Karvelis added 4/22/2021
+H5-CA-NB    51.900    115.820   E Karvelis added 4/22/2021
+NB-CA-NB    70.900    127.260   E Karvelis added 4/22/2021
+NB-CA-NH    72.700    116.940   E Karvelis added 4/22/2021
+CA-NH-HN    48.400    116.070   E Karvelis added 4/22/2021
+HN-NH-HN    40.100    115.120   E Karvelis added 4/22/2021
+C3-C -O    67.400     123.200   E Karvelis added 4/22/2021
+C -C3-C3   63.300     111.040   E Karvelis added 4/22/2021
+C -C3-O    67.735     116.965   E Karvelis added 4/22/2021   Calculated with empirical approach for c-c3-o
+C -C3-C    63.400     111.630   E Karvelis added 4/22/2021
+C3-C3-HC   46.300     109.800   E Karvelis added 4/22/2021
+C3-C -C3   62.000     116.500   E Karvelis added 4/22/2021
+C3-C3-O    68.500     113.010   E Karvelis added 4/22/2021
+C -C3-HC   46.900     108.770   E Karvelis added 4/22/2021
 
 X -C -CA-X    4   14.50        180.0             2.         intrpol.bsd.on C6H6
 X -C -CB-X    4   12.00        180.0             2.         intrpol.bsd.on C6H6
@@ -397,7 +506,7 @@ N -CT-C -N    1    0.85        000.0             1.         Kollman et al. 1997
 CT-CT-N -C    1    0.50        180.0            -4.
 CT-CT-N -C    1    0.15        180.0            -3.
 CT-CT-N -C    1    0.53          0.0             1.
-CT-CT-C -N    1    0.100         0.0            -4.         
+CT-CT-C -N    1    0.100         0.0            -4.
 CT-CT-C -N    1    0.07          0.0             2.
 H -N -C -O    1    2.50        180.0            -2.         JCC,7,(1986),230
 H -N -C -O    1    2.00          0.0             1.         J.C.cistrans-NMA DE
@@ -417,18 +526,148 @@ OS-CT-N*-CK   1    0.50        180.0            -2.         sugar frag calc (PC)
 OS-CT-N*-CK   1    2.50          0.0             1.         sugar frag calc (PC)
 OS-CT-N*-CM   1    0.50        180.0            -2.         sugar frag calc (PC)
 OS-CT-N*-CM   1    2.50          0.0             1.         sugar frag calc (PC)
-CA-CA-CT-CZ   1    0.000         0.0             2.         antechamber, same as X -c2-c3-X, ivelin georgiev 
-CA-CT-CZ-CZ   1    0.000       180.0             2.         antechamber, same as X -c1-c3-X, ivelin georgiev 
-CT-CZ-CZ-CM   1    0.000       180.0             2.         antechamber, same as X -c1-c1-X, ivelin georgiev 
-CT-CT-CZ-CZ   1    0.000       180.0             2.         antechamber, same as X -c1-c3-X, ivelin georgiev 
-HC-CT-CT-CZ   1    0.156         0.0             3.         antechamber, same as X -c3-c3-X, ivelin georgiev 
-HC-CT-CZ-CZ   1    0.000       180.0             2.         antechamber, same as X -c1-c3-X, ivelin georgiev 
-CZ-CZ-CM-CM   1    0.000       180.0             2.         antechamber, same as X -c1-c2-X, ivelin georgiev 
-CZ-CM-CM-CT   1    6.650       180.0             2.         antechamber, same as X -c2-c2-X, ivelin georgiev 
-CZ-CM-CM-NA   1    6.650       180.0             2.         antechamber, same as X -c2-c2-X, ivelin georgiev 
-CZ-CM-CM-NC   1    6.650       180.0             2.         antechamber, same as X -c2-c2-X, ivelin georgiev 
+CA-CA-CT-CZ   1    0.000         0.0             2.         antechamber, same as X -c2-c3-X, ivelin georgiev
+CA-CT-CZ-CZ   1    0.000       180.0             2.         antechamber, same as X -c1-c3-X, ivelin georgiev
+CT-CZ-CZ-CM   1    0.000       180.0             2.         antechamber, same as X -c1-c1-X, ivelin georgiev
+CT-CT-CZ-CZ   1    0.000       180.0             2.         antechamber, same as X -c1-c3-X, ivelin georgiev
+HC-CT-CT-CZ   1    0.156         0.0             3.         antechamber, same as X -c3-c3-X, ivelin georgiev
+HC-CT-CZ-CZ   1    0.000       180.0             2.         antechamber, same as X -c1-c3-X, ivelin georgiev
+CZ-CZ-CM-CM   1    0.000       180.0             2.         antechamber, same as X -c1-c2-X, ivelin georgiev
+CZ-CM-CM-CT   1    6.650       180.0             2.         antechamber, same as X -c2-c2-X, ivelin georgiev
+CZ-CM-CM-NA   1    6.650       180.0             2.         antechamber, same as X -c2-c2-X, ivelin georgiev
+CZ-CM-CM-NC   1    6.650       180.0             2.         antechamber, same as X -c2-c2-X, ivelin georgiev
 CZ-CM-CM-N2   1    6.650       180.0             2.         antechamber, same as X -c2-c2-X, ivelin georgiev
-CA-CA-OS-CT   1    1.050       180.0             2.         antechamber, same as X -c2-os-X, ivelin georgiev 
+CA-CA-OS-CT   1    1.050       180.0             2.         antechamber, same as X -c2-os-X, ivelin georgiev
+O -C -N -HN   1    2.500       180.0            -2.         E Karvelis added 4/22/2021
+O -C -N -HN   1    2.000         0.0             1.         E Karvelis added 4/22/2021
+O -C -CE-C2   4    8.700       180.0             2.         E Karvelis added 4/22/2021
+O -C -CE-C3   4    8.700       180.0             2.         E Karvelis added 4/22/2021
+H4-C2-CE-C    4   26.600       180.0             2.         E Karvelis added 4/22/2021
+NH-C2-CE-C    4   26.600       180.0             2.         E Karvelis added 4/22/2021
+HC-C3-CE-C    1    0.380       180.0            -3.         E Karvelis added 4/22/2021         same as HC-C3-C2-C2
+HC-C3-CE-C    1    0.000         0.0            -2.         E Karvelis added 4/22/2021         same as HC-C3-C2-C2
+HC-C3-CE-C    1    1.150         0.0             1.         E Karvelis added 4/22/2021         same as HC-C3-C2-C2, penalty score=324.0
+C2-C3-CE-C    6    0.000         0.0             3.         E Karvelis added 4/22/2021         same as X -C3-CC-X , penalty score=136.0
+N -C -CE-C2   4    8.700       180.0             2.         E Karvelis added 4/22/2021
+N -C -CE-C3   4    8.700       180.0             2.         E Karvelis added 4/22/2021
+CE-C -N -HN   4   10.000       180.0             2.         E Karvelis added 4/22/2021
+CE-C2-NH-C2   4    2.700       180.0             2.         E Karvelis added 4/22/2021
+CE-C2-NH-C3   4    2.700       180.0             2.         E Karvelis added 4/22/2021
+HA-C2-C3-CE   6    0.000         0.0             2.         E Karvelis added 4/22/2021
+C2-C2-C3-CE   6    0.000         0.0             2.         E Karvelis added 4/22/2021
+HC-C3-CE-C2   1    0.380       180.0            -3.         E Karvelis added 4/22/2021         same as HC-C3-C2-C2
+HC-C3-CE-C2   1    0.000         0.0            -2.         E Karvelis added 4/22/2021         same as HC-C3-C2-C2
+HC-C3-CE-C2   1    1.150         0.0             1.         E Karvelis added 4/22/2021         same as HC-C3-C2-C2, penalty score=237.0
+C2-C3-CE-C2   6    0.000         0.0             3.         E Karvelis added 4/22/2021         same as X -C3-CC-X , penalty score=136.0
+H2-C3-NH-C2   6    0.000         0.0             2.         E Karvelis added 4/22/2021
+OS-C3-NH-C2   6    0.000         0.0             2.         E Karvelis added 4/22/2021
+C3-C3-NH-C2   6    0.000         0.0             2.         E Karvelis added 4/22/2021
+H4-C2-NH-C2   4    2.700       180.0             2.         E Karvelis added 4/22/2021
+H4-C2-NH-C3   4    2.700       180.0             2.         E Karvelis added 4/22/2021
+H4-C2-CE-C3   4   26.600       180.0             2.         E Karvelis added 4/22/2021
+NH-C2-CE-C3   4   26.600       180.0             2.         E Karvelis added 4/22/2021
+C3-C2-C2-H4   4   26.600       180.0             2.         E Karvelis added 4/22/2021
+C3-C2-C2-NH   4   26.600       180.0             2.         E Karvelis added 4/22/2021
+HA-C2-C3-HC   6    0.000         0.0             2.         E Karvelis added 4/22/2021
+C2-C2-C3-HC   1    0.380       180.0            -3.         E Karvelis added 4/22/2021
+C2-C2-C3-HC   1    0.000         0.0            -2.         E Karvelis added 4/22/2021
+C2-C2-C3-HC   1    1.150         0.0             1.         E Karvelis added 4/22/2021
+C2-C2-NH-C2   4    2.700       180.0             2.         E Karvelis added 4/22/2021
+C2-C2-NH-C3   4    2.700       180.0             2.         E Karvelis added 4/22/2021
+H4-C2-C2-HA   4   26.600       180.0             2.         E Karvelis added 4/22/2021
+HA-C2-C2-NH   4   26.600       180.0             2.         E Karvelis added 4/22/2021
+NH-C3-OS-C3   3    1.150         0.0             3.         E Karvelis added 4/22/2021
+H1-C3-C3-NH   9    1.400         0.0             3.         E Karvelis added 4/22/2021
+NH-C3-C3-OH   9    1.400         0.0             3.         E Karvelis added 4/22/2021
+C3-C3-C3-NH   9    1.400         0.0             3.         E Karvelis added 4/22/2021
+C3-C3-OS-C3   1    0.383         0.0            -3.         E Karvelis added 4/22/2021
+C3-C3-OS-C3   1    0.100       180.0             2.         E Karvelis added 4/22/2021
+H1-C3-OS-C3   3    1.150         0.0             3.         E Karvelis added 4/22/2021
+C3-C3-OH-HO   1    0.160         0.0            -3.         E Karvelis added 4/22/2021
+C3-C3-OH-HO   1    0.250         0.0             1.         E Karvelis added 4/22/2021
+C3-C3-C3-H1   9    1.400         0.0             3.         E Karvelis added 4/22/2021
+C3-C3-C3-OH   9    1.400         0.0             3.         E Karvelis added 4/22/2021
+C3-C3-C3-C3   1    0.180         0.0            -3.         E Karvelis added 4/22/2021
+C3-C3-C3-C3   1    0.250       180.0            -2.         E Karvelis added 4/22/2021
+C3-C3-C3-C3   1    0.200       180.0             1.         E Karvelis added 4/22/2021
+H2-C3-OS-C3   3    1.150         0.0             3.         E Karvelis added 4/22/2021
+H1-C3-C3-H2   9    1.400         0.0             3.         E Karvelis added 4/22/2021
+H2-C3-C3-OH   9    1.400         0.0             3.         E Karvelis added 4/22/2021
+C3-C3-C3-H2   9    1.400         0.0             3.         E Karvelis added 4/22/2021
+H1-C3-C3-OS   1    0.000         0.0            -3.         E Karvelis added 4/22/2021
+H1-C3-C3-OS   1    0.250         0.0             1.         E Karvelis added 4/22/2021
+OH-C3-C3-OS   1    0.144         0.0            -3.         E Karvelis added 4/22/2021
+OH-C3-C3-OS   1    1.175         0.0             2.         E Karvelis added 4/22/2021
+C3-C3-C3-OS   9    1.400         0.0             3.         E Karvelis added 4/22/2021
+OS-C3-C3-OS   1    0.144         0.0            -3.         E Karvelis added 4/22/2021
+OS-C3-C3-OS   1    1.175         0.0             2.         E Karvelis added 4/22/2021
+H1-C3-OH-HO   3    0.500         0.0             3.         E Karvelis added 4/22/2021
+H1-C3-C3-H1   9    1.400         0.0             3.         E Karvelis added 4/22/2021
+H1-C3-C3-OH   1    0.000         0.0            -3.         E Karvelis added 4/22/2021
+H1-C3-C3-OH   1    0.250         0.0             1.         E Karvelis added 4/22/2021
+OH-C3-C3-OH   1    0.144         0.0            -3.         E Karvelis added 4/22/2021
+OH-C3-C3-OH   1    1.175         0.0             2.         E Karvelis added 4/22/2021
+C3-C3-OS-P5   3    1.150         0.0            -3.         E Karvelis added 4/22/2021
+C3-C3-OS-P5   1    3.950       180.0             1.         E Karvelis added 4/22/2021
+C3-OS-P5-O    1    0.800         0.0            -2.         E Karvelis added 4/22/2021
+C3-OS-P5-O    1    0.550         0.0             3.         E Karvelis added 4/22/2021
+C3-OS-P5-OS   1    0.250         0.0            -3.         E Karvelis added 4/22/2021
+C3-OS-P5-OS   1    1.200         0.0             2.         E Karvelis added 4/22/2021
+H1-C3-OS-P5   3    1.150         0.0             3.         E Karvelis added 4/22/2021
+P5-OS-P5-OS   3    2.400         0.0             2.         E Karvelis added 4/22/2021
+P5-OS-P5-O    3    2.400         0.0             2.         E Karvelis added 4/22/2021
+NA-C3-OS-C3   1    0.383         0.0            -3.         E Karvelis added 4/22/2021
+NA-C3-OS-C3   1    0.650         0.0             2.         E Karvelis added 4/22/2021
+C3-C3-C3-NA   9    1.400         0.0             3.         E Karvelis added 4/22/2021
+C3-OS-P5-OH   1    0.250         0.0            -3.         E Karvelis added 4/22/2021
+C3-OS-P5-OH   1    1.200         0.0             2.         E Karvelis added 4/22/2021
+C3-C3-NA-CD   6    0.000         0.0             2.         E Karvelis added 4/22/2021
+C3-C3-NA-CA   6    0.000         0.0             2.         E Karvelis added 4/22/2021
+H1-C3-C3-NA   9    1.400         0.0             3.         E Karvelis added 4/22/2021
+H2-C3-C3-OS   9    1.400         0.0             3.         E Karvelis added 4/22/2021
+NA-C3-C3-OS   9    1.400         0.0             3.         E Karvelis added 4/22/2021
+HO-OH-P5-OS   3    1.600         0.0             3.         E Karvelis added 4/22/2021
+HO-OH-P5-O    3    1.600         0.0             3.         E Karvelis added 4/22/2021
+OS-C3-NA-CD   6    0.000         0.0             2.         E Karvelis added 4/22/2021
+OS-C3-NA-CA   6    0.000         0.0             2.         E Karvelis added 4/22/2021
+H5-CD-NA-C3   4    6.800       180.0             2.         E Karvelis added 4/22/2021
+NC-CD-NA-C3   4    6.800       180.0             2.         E Karvelis added 4/22/2021
+CA-CA-NA-C3   4    1.200       180.0             2.         E Karvelis added 4/22/2021
+NB-CA-NA-C3   4    1.200       180.0             2.         E Karvelis added 4/22/2021
+H2-C3-NA-CD   6    0.000         0.0             2.         E Karvelis added 4/22/2021
+H2-C3-NA-CA   6    0.000         0.0             2.         E Karvelis added 4/22/2021
+NA-CD-NC-CA   2    9.500       180.0             2.         E Karvelis added 4/22/2021
+NA-CA-NB-CA   2    9.600       180.0             2.         E Karvelis added 4/22/2021
+CA-CA-NA-CD   4    1.200       180.0             2.         E Karvelis added 4/22/2021
+NB-CA-NA-CD   4    1.200       180.0             2.         E Karvelis added 4/22/2021
+CA-CA-NC-CD   2    9.600       180.0             2.         E Karvelis added 4/22/2021
+H5-CD-NC-CA   2    9.500       180.0             2.         E Karvelis added 4/22/2021
+NA-CA-CA-NC   4   14.500       180.0             2.         E Karvelis added 4/22/2021
+NB-CA-CA-NC   4   14.500       180.0             2.         E Karvelis added 4/22/2021
+NC-CA-CA-NH   4   14.500       180.0             2.         E Karvelis added 4/22/2021
+CA-CA-NB-CA   2    9.600       180.0             2.         E Karvelis added 4/22/2021
+CA-CA-NH-HN   4    4.200       180.0             2.         E Karvelis added 4/22/2021
+H5-CD-NA-CA   4    6.800       180.0             2.         E Karvelis added 4/22/2021
+NC-CD-NA-CA   4    6.800       180.0             2.         E Karvelis added 4/22/2021
+CA-CA-CA-NB   4   14.500       180.0             2.         E Karvelis added 4/22/2021
+CA-CA-CA-NH   4   14.500       180.0             2.         E Karvelis added 4/22/2021
+H5-CA-NB-CA   2    9.600       180.0             2.         E Karvelis added 4/22/2021
+NB-CA-NB-CA   2    9.600       180.0             2.         E Karvelis added 4/22/2021
+NH-CA-NB-CA   2    9.600       180.0             2.         E Karvelis added 4/22/2021
+NB-CA-NH-HN   4    4.200       180.0             2.         E Karvelis added 4/22/2021
+CA-CA-CA-NA   4   14.500       180.0             2.         E Karvelis added 4/22/2021
+O -C -C3-C3   6    0.000       180.0             2.         E Karvelis added 4/22/2021
+O -C -C3-O    6    0.000       180.0             2.         E Karvelis added 4/22/2021
+O -C -C3-C    6    0.000       180.0             2.         E Karvelis added 4/22/2021
+C -C3-C3-HC   9    1.400         0.0             3.         E Karvelis added 4/22/2021
+C3-C -C3-C    6    0.000       180.0             2.         E Karvelis added 4/22/2021
+C3-C -C3-HC   6    0.000       180.0             2.         E Karvelis added 4/22/2021
+C3-C -C3-C3   6    0.000       180.0             2.         E Karvelis added 4/22/2021
+HC-C3-C3-O    9    1.400         0.0             3.         E Karvelis added 4/22/2021
+C3-C -C3-O    6    0.000       180.0             2.         E Karvelis added 4/22/2021
+O -C -C3-HC   1    0.800         0.0            -1.         E Karvelis added 4/22/2021
+O -C -C3-HC   1    0.000         0.0            -2.         E Karvelis added 4/22/2021
+O -C -C3-HC   1    0.080       180.0             3.         E Karvelis added 4/22/2021
 
 X -X -C -O          10.5         180.          2.           JCC,7,(1986),230
 X -O2-C -O2         10.5         180.          2.           JCC,7,(1986),230
@@ -445,23 +684,38 @@ X -X -CQ-H5         1.1          180.          2.
 X -X -CK-H5         1.1          180.          2.
 X -X -CM-H4         1.1          180.          2.
 X -X -CM-HA         1.1          180.          2.
-X -X -CA-H4         1.1          180.          2.           bsd.on C6H6 nmodes 
+X -X -CA-H4         1.1          180.          2.           bsd.on C6H6 nmodes
 X -X -CA-H5         1.1          180.          2.           bsd.on C6H6 nmodes
 CK-CB-N*-CT         1.0          180.          2.
 CM-C -N*-CT         1.0          180.          2.           dac guess, 9/94
-CM-C -CM-CT         1.1          180.          2. 
+CM-C -CM-CT         1.1          180.          2.
 CT-O -C -OH         10.5         180.          2.
-NA-CV-CC-CT         1.1          180.          2. 
-NB-CW-CC-CT         1.1          180.          2. 
-NA-CW-CC-CT         1.1          180.          2. 
-CW-CB-C*-CT         1.1          180.          2. 
-CA-CA-CA-CT         1.1          180.          2. 
+NA-CV-CC-CT         1.1          180.          2.
+NB-CW-CC-CT         1.1          180.          2.
+NA-CW-CC-CT         1.1          180.          2.
+CW-CB-C*-CT         1.1          180.          2.
+CA-CA-CA-CT         1.1          180.          2.
 C -CM-CM-CT         1.1          180.          2.           dac guess, 9/94
 NC-CM-CA-N2         1.1          180.          2.           dac guess, 9/94
 CB-NC-CA-N2         1.1          180.          2.           dac, 10/94
 NA-NC-CA-N2         1.1          180.          2.           dac, 10/94
-CA-CA-C -OH         1.1          180.          2. 
-CM-CM-CM-CZ         1.1          180.0         2.0          antechamber, using default value, ivelin georgiev
+CA-CA-C -OH         1.1          180.          2.
+CM-CM-CM-CZ         1.1          180.          2.           antechamber, using default value, ivelin georgiev
+CE-N -C -O         10.5          180.          2.           E Karvelis added 4/22/2021 Using general improper torsional angle  X- X- c- o, penalty score=  6.0)
+C -HN-N -Hn         1.1          180.          2.           E Karvelis added 4/22/2021           Using general improper torsional angle  X- X- n-hn, penalty score=  6.0)
+C -C2-CE-C3         1.1          180.          2.           E Karvelis added 4/22/2021           Using the default value
+CE-H4-C2-NH         1.1          180.          2.           E Karvelis added 4/22/2021           Using the default value
+C2-C3-C2-HA         1.1          180.          2.           E Karvelis added 4/22/2021           Same as X -X -ca-ha, penalty score= 47.1 (use general term))
+C2-H4-C2-NH         1.1          180.          2.           E Karvelis added 4/22/2021           Using the default value
+C3-CA-NA-CD         1.1          180.          2.           E Karvelis added 4/22/2021           Using the default value
+H5-NA-CD-NC         1.1          180.          2.           E Karvelis added 4/22/2021           Using the default value
+CA-CA-CA-NC         1.1          180.          2.           E Karvelis added 4/22/2021           Using the default value
+CA-NA-CA-NB         1.1          180.          2.           E Karvelis added 4/22/2021           Using the default value
+H5-NB-CA-NB        10.5          180.          2.           E Karvelis added 4/22/2021           Same as X -n2-ca-n2, penalty score= 48.6 (use general term))
+CA-NB-CA-NH         1.1          180.          2.           E Karvelis added 4/22/2021           Using the default value
+CA-HN-NH-HN         1.1          180.          2.           E Karvelis added 4/22/2021           Same as X -X -na-hn, penalty score= 41.2 (use general term))
+C3-O -C -O          1.1          180.          2.           E Karvelis added 4/22/2021           Using general improper torsional angle  X- o- c- o, penalty score=  3.0)
+C3-C3-C -O         10.5          180.          2.           E Karvelis added 4/22/2021           Using general improper torsional angle  X- X- c- o, penalty score=  6.0)
 
   HW  OW  0000.     0000.                                4.  flag for fast water
 
@@ -473,18 +727,18 @@ MOD4      RE
   HO          0.0000  0.0000             OPLS Jorgensen, JACS,110,(1988),1657
   HS          0.6000  0.0157             W. Cornell CH3SH --> CH3OH FEP
   HC          1.4870  0.0157             OPLS
-  H1          1.3870  0.0157             Veenstra et al JCC,8,(1992),963 
-  H2          1.2870  0.0157             Veenstra et al JCC,8,(1992),963 
-  H3          1.1870  0.0157             Veenstra et al JCC,8,(1992),963 
+  H1          1.3870  0.0157             Veenstra et al JCC,8,(1992),963
+  H2          1.2870  0.0157             Veenstra et al JCC,8,(1992),963
+  H3          1.1870  0.0157             Veenstra et al JCC,8,(1992),963
   HP          1.1000  0.0157             Veenstra et al JCC,8,(1992),963
-  HA          1.4590  0.0150             Spellmeyer 
+  HA          1.4590  0.0150             Spellmeyer
   H4          1.4090  0.0150             Spellmeyer, one electrowithdr. neighbor
   H5          1.3590  0.0150             Spellmeyer, two electrowithdr. neighbor
   HW          0.0000  0.0000             TIP3P water model
   O           1.6612  0.2100             OPLS
   O2          1.6612  0.2100             OPLS
   OW          1.7683  0.1520             TIP3P water model
-  OH          1.7210  0.2104             OPLS 
+  OH          1.7210  0.2104             OPLS
   OS          1.6837  0.1700             OPLS ether
   CT          1.9080  0.1094             Spellmeyer
   CA          1.9080  0.0860             Spellmeyer
@@ -493,18 +747,29 @@ MOD4      RE
   N           1.8240  0.1700             OPLS
   S           2.0000  0.2500             W. Cornell CH3SH and CH3SCH3 FEP's
   SH          2.0000  0.2500             W. Cornell CH3SH and CH3SCH3 FEP's
-  P           2.1000  0.2000             JCC,7,(1986),230; 
+  P           2.1000  0.2000             JCC,7,(1986),230;
   IM          2.47    0.1                Cl- Smith & Dang, JCP 1994,100:5,3757
   Li          1.1370  0.0183             Li+ Aqvist JPC 1990,94,8021. (adapted)
   IP          1.8680  0.00277            Na+ Aqvist JPC 1990,94,8021. (adapted)
   K           2.6580  0.000328           K+  Aqvist JPC 1990,94,8021. (adapted)
   Rb          2.9560  0.00017            Rb+ Aqvist JPC 1990,94,8021. (adapted)
   Cs          3.3950  0.0000806          Cs+ Aqvist JPC 1990,94,8021. (adapted)
-  I           2.35    0.40               JCC,7,(1986),230;  
+  MG          0.7926  0.8947             E Karvelis added 4/22/2 Mg2+ Aqvist JPC 1990,94,8021.(adapted)
+  I           2.35    0.40               JCC,7,(1986),230;
   F           1.75    0.061              Gough et al. JCC 13,(1992),963.
   IB          5.0     0.1                solvated ion for vacuum approximation
   Cl          1.948   0.265              Fox, JPCB,102,8070,(98),flex.mdl CHCl3 (lilien)
   CZ          1.908   0.0860             antechamber, same as c1, ivelin georgiev
- 
+  HN          0.6000  0.0157             E Karvelis added 4/22/21
+  CE          1.9080  0.0860             E Karvelis added 4/22/21
+  C2          1.9080  0.0860             E Karvelis added 4/22/21
+  C3          1.9080  0.1094             E Karvelis added 4/22/21
+  NH          1.8240  0.1700             E Karvelis added 4/22/21
+  P5          2.1000  0.2000             E Karvelis added 4/22/21
+  NA          1.8240  0.1700             E Karvelis added 4/22/21
+  CD          1.9080  0.0860             E Karvelis added 4/22/21
+  NC          1.8240  0.1700             E Karvelis added 4/22/21
+  NB          1.8240  0.1700             E Karvelis added 4/22/21
+
 END
 END
