@@ -755,6 +755,7 @@ MOD4      RE
   Rb          2.9560  0.00017            Rb+ Aqvist JPC 1990,94,8021. (adapted)
   Cs          3.3950  0.0000806          Cs+ Aqvist JPC 1990,94,8021. (adapted)
   MG          0.7926  0.8947             E Karvelis added 4/22/2 Mg2+ Aqvist JPC 1990,94,8021.(adapted)
+  Mg          0.7926  0.8947             E Karvelis added 4/22/2 Mg2+ Aqvist JPC 1990,94,8021.(adapted)
   I           2.35    0.40               JCC,7,(1986),230;
   F           1.75    0.061              Gough et al. JCC 13,(1992),963.
   IB          5.0     0.1                solvated ion for vacuum approximation
