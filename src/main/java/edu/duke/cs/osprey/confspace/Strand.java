@@ -66,7 +66,7 @@ public class Strand implements Serializable {
 		 **/
 		private ResidueTemplateLibrary templateLib;
 		private boolean errorOnNonTemplateResidues;
-		private Residue.TemplateMatchingMethod templateMatchingMethod = Residue.TemplateMatchingMethod.AtomNames;
+		private Residue.TemplateMatchingMethod templateMatchingMethod = Residue.TemplateMatchingMethod.BondDistances;
 
 		public Builder(Molecule mol) {
 			this.mol = mol;
