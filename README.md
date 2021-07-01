@@ -9,3 +9,4 @@ Clone this repo to a local directory. Install java 14 SDK (openjdk) if you haven
 ``` 
 If you get an error about the JAVA_HOME variable, then comment-out the `export JAVA_HOME=` line from your shell configuration file, close and open a new terminal (`source config_file` will _not_ work here), then try again. You may need to un-comment the `export JAVA_HOME=` line before you try to run OSPREY!
 
+If, for some reason, the compilation fails. Try restarting your machine. This has worked before.
