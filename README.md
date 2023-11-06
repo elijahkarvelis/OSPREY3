@@ -1,4 +1,4 @@
-### My personal copy of the [OSPREY3 package](https://github.com/donaldlab/OSPREY3)
+### Modified copy of the [OSPREY3 package](https://github.com/donaldlab/OSPREY3)
 I've slightly modified the original source code for my needs. These changes include:
 1. added forcefield parameters for a small molecule substrate (residue name AC6), NADPH (residue name NDQ), and Mg2+ ions
 
